@@ -13,9 +13,9 @@
 
 
 /*----------- ROUTE WITHOUT CONTROLLER -------------*/
-// Route::get('/', function () {
-//     return view('index');
-// });
+Route::get('/laravel', function () {
+    return view('welcome');
+});
 
 // Route::get('/about', function () {
 //     $nama = "Dany Adhi Prabowo";
@@ -41,3 +41,10 @@ Route::get('/mahasiswa', "MahasiswaController@index");
 // Route::patch('/students/{student}', "StudentsController@update");
 
 Route::resource('students', "StudentsController");  //Route line 35-41 bisa diganti dng 1 baris ini.
+
+
+Auth::routes();
+
+Auth::routes(['verify' => true]); //verify email
+
+Route::get('/home', 'HomeController@index')->name('home');
