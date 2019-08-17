@@ -23,6 +23,10 @@
             <a class="nav-item nav-link" href="{{url('/about')}}">About</a>
             <a class="nav-item nav-link" href="{{url('/mahasiswa')}}">Mahasiswa</a>
             <a class="nav-item nav-link" href="{{url('/students')}}">Students</a>
+            <form method="POST" action="{{url('/logout')}}">
+                @csrf
+                <button type="submit" class="nav-item nav-link font-weight-bold ml-lg-5 bg-transparent border-0">Logout</button>
+            </form>
             </div>
         </div>
     </div>

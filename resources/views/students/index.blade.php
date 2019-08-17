@@ -24,6 +24,8 @@
                         <li class="list-group-item d-flex justify-content-between align-items-center">
                         {{$s->nama}}
                         <a href="{{url('/students/'.$s->id)}}" class="badge badge-primary">Detail</a>
+                        {{-- <a href="{{url('/students/'.Crypt::encrypt($s->id))}}" class="badge badge-primary">Detail</a> --}}
+                        
                         </li>
                     @endforeach
                 </ul>

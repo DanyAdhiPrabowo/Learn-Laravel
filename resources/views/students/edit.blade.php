@@ -8,7 +8,7 @@
             <div class="col-6">
                 <h1 class="mt-5 mb-4">From Edit Students!</h1>
 
-                <form method="POST" action="{{url('students/'.$student->id)}}">
+                <form method="POST" action="{{url('students/'.$student->id)}}" enctype="multipart/form-data">
                     @method('patch')
                     @csrf
                   <div class="form-group">
@@ -31,8 +31,16 @@
                     <input name="jurusan" type="text" class="form-control @error('jurusan') is-invalid @enderror" placeholder="Masukkan Jurusan" value="{{$student->jurusan}}">
                     @error('jurusan') <div class="invalid-feedback">{{$message}}</div>@enderror
                   </div>
-                  <button class="btn btn-primary">Update</button>
-                    <a href="{{url('/students')}}" class="btn bg-secondary text-white">Back</a>
+                  <div class="form-group mb-5">
+                    <label>Gambar</label>
+                    <div class="mt-2 mb-3">
+                      <img src="{{asset('image/upload_students/'.$student->image)}}" width="200" height="200">  
+                    </div>
+                    <input name="image" type="file" class="form-control-file @error('image') is-invalid @enderror" value="{{asset('image/upload_students/'.$student->image)}}">
+                    @error('image') <div class="invalid-feedback">{{$message}}</div>@enderror
+                  </div> 
+                  <button class="btn btn-primary ">Update</button>
+                  <a href="{{url('/students')}}" class="btn bg-secondary text-white">Back</a>
                 </form>
                 
             </div>

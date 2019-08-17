@@ -9,6 +9,7 @@
                 <h1 class="mt-5">Detail Students!</h1>
                 <div class="card">
                   <div class="card-body">
+                    <img src="{{asset('image/upload_students/'.$student->image)}}" width="200" height="200">
                     <h5 class="card-title">{{$student->nama}}</h5>
                     <h6 class="card-subtitle mb-2 text-muted">{{$student->npm}}</h6>
                     <p class="card-text">{{$student->email}}</p>

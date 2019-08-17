@@ -8,7 +8,7 @@
             <div class="col-6">
                 <h1 class="mt-5 mb-4">From Students!</h1>
 
-                <form method="POST" action="{{url('/students')}}">
+                <form method="POST" action="{{url('/students')}}" enctype="multipart/form-data">
                     @csrf
                   <div class="form-group">
                     <label >Nama</label>
@@ -30,7 +30,12 @@
                     <input name="jurusan" type="text" class="form-control @error('jurusan') is-invalid @enderror" placeholder="Masukkan Jurusan" value="{{old('jurusan')}}">
                     @error('jurusan') <div class="invalid-feedback">{{$message}}</div>@enderror
                   </div>
-                  <button class="btn btn-primary">Simpan</button>
+                  <div class="form-group">
+                    <label>Gambar</label>
+                    <input name="image" type="file" class="form-control-file @error('image') is-invalid @enderror" value="{{old('image')}}">
+                    @error('image') <div class="invalid-feedback">{{$message}}</div>@enderror
+                  </div>
+                  <button class="btn btn-primary mt-3">Simpan</button>
                 </form>
                 
             </div>
