@@ -143,7 +143,10 @@ class StudentsController extends Controller
      */
     public function destroy(Student $student)
     {
+        // unlink(base_path("public/image/upload_students/".$student->image)); //delete_file_on_laravel
+
         \App\Student::destroy($student->id);
         return  redirect('/students')->with('message', "Data berhasil dihapus!");
+
     }
 }
